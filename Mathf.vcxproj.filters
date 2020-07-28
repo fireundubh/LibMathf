@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{e487ea2f-dbf7-49c6-bd70-00519f35c76c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Papyrus">
+      <UniqueIdentifier>{4e2d1f7c-7560-4ea2-8c09-fdcf45dcb40f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Serialization">
+      <UniqueIdentifier>{3017b9c1-d98c-4bff-a392-1dc41ca40333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{aa92b404-330b-45b4-975c-5f8812dd94b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Papyrus">
+      <UniqueIdentifier>{82a171ab-b422-4e2d-baee-321b475c543b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Serialization">
+      <UniqueIdentifier>{4f2727d2-151c-480b-aa53-9ca5fcb105f9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PCH.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PapyrusMath.cpp">
+      <Filter>src\Papyrus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Registration.cpp">
+      <Filter>src\Papyrus</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\version.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PCH.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\main.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PapyrusMath.h">
+      <Filter>include\Papyrus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Registration.h">
+      <Filter>include\Papyrus</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".clang-format" />
+    <None Include="exports.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="version.rc" />
+  </ItemGroup>
+</Project>
