@@ -3,7 +3,7 @@
 #include "Registration.h"
 
 
-extern "C" bool DLLEXPORT SKSEPlugin_Query(const SKSE::QueryInterface* a_skse, SKSE::PluginInfo* a_info)
+extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Query(const SKSE::QueryInterface* a_skse, SKSE::PluginInfo* a_info)
 {
 #ifndef NDEBUG
 	auto sink = std::make_shared<spdlog::sinks::msvc_sink_mt>();
@@ -14,7 +14,7 @@ extern "C" bool DLLEXPORT SKSEPlugin_Query(const SKSE::QueryInterface* a_skse, S
 	}
 
 	*path /= "Mathf.log"sv;
-	auto sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>(path.string(), true);
+	auto sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>(path->string(), true);
 #endif
 
 	auto log = std::make_shared<spdlog::logger>("global log"s, std::move(sink));
@@ -52,7 +52,7 @@ extern "C" bool DLLEXPORT SKSEPlugin_Query(const SKSE::QueryInterface* a_skse, S
 }
 
 
-extern "C" bool DLLEXPORT SKSEPlugin_Load(const SKSE::LoadInterface* a_skse)
+extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Load(const SKSE::LoadInterface* a_skse)
 {
 	logger::info("Mathf loaded");
 
@@ -64,7 +64,7 @@ extern "C" bool DLLEXPORT SKSEPlugin_Load(const SKSE::LoadInterface* a_skse)
 }
 
 
-extern "C" float DLLEXPORT __declspec(dllexport) GetPluginVersion()
+extern "C" DLLEXPORT float __declspec(dllexport) GetPluginVersion()
 {
-	return Version::version;
+	return Version::VERSION;
 }

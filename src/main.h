@@ -11,5 +11,5 @@ __declspec(dllexport) float GetPluginVersion();
 
 namespace Version
 {
-	inline constexpr float version = 0.1f;
+	inline constexpr float VERSION = 0.1f;
 }
