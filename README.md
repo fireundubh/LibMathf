@@ -1,6 +1,6 @@
 # LibMathf (CommonLibSSE Plugin)
 
-```
+```papyrus
 ; Returns the absolute value of f
 Float Function Abs(Float f) Global Native
 
