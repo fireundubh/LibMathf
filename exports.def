@@ -1,4 +1,4 @@
-LIBRARY	"Mathf"
+LIBRARY	"LibMathf"
 EXPORTS
 SKSEPlugin_Query
 SKSEPlugin_Load

@@ -1,4 +1,4 @@
-ScriptName Mathf Hidden
+ScriptName LibMathf Hidden
 
 
 ; Returns the absolute value of f

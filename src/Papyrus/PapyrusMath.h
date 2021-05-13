@@ -1,9 +1,8 @@
 #pragma once
 
-#include "main.h"
+#pragma warning(disable : 4100)
 
-
-namespace papyrusMath
+namespace PapyrusMath
 {
 	using VM = RE::BSScript::IVirtualMachine;
 	using StackID = RE::VMStackID;

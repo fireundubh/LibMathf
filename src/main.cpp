@@ -1,6 +1,5 @@
-﻿#include "version.h"
-#include "main.h"
-#include "Registration.h"
+﻿#include "Version.h"
+#include "Papyrus\Registration.h"
 
 
 extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Query(const SKSE::QueryInterface* a_skse, SKSE::PluginInfo* a_info)
@@ -13,7 +12,7 @@ extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Query(const SKSE::QueryInterface* a
 		return false;
 	}
 
-	*path /= "Mathf.log"sv;
+	*path /= fmt::format(FMT_STRING("{}.log"), PROJECT_NAME);
 	auto sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>(path->string(), true);
 #endif
 
@@ -29,10 +28,10 @@ extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Query(const SKSE::QueryInterface* a
 	set_default_logger(std::move(log));
 	spdlog::set_pattern("%g(%#): [%^%l%$] %v"s);
 
-	logger::info(FMT_STRING("Mathf v{}"), MATH_VERSION_VERSTRING);
+	logger::info(FMT_STRING("{} v{}"), PROJECT_NAME, MATH_VERSION_VERSTRING);
 
 	a_info->infoVersion = SKSE::PluginInfo::kVersion;
-	a_info->name = "Mathf";
+	a_info->name = PROJECT_NAME;
 	a_info->version = MATH_VERSION_MAJOR;
 
 	if (a_skse->IsEditor())
@@ -51,20 +50,13 @@ extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Query(const SKSE::QueryInterface* a
 	return true;
 }
 
-
 extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Load(const SKSE::LoadInterface* a_skse)
 {
-	logger::info("Mathf loaded");
-
 	Init(a_skse);
 
 	Papyrus::Register();
 
+	logger::info(FMT_STRING("{} loaded"), PROJECT_NAME);
+
 	return true;
-}
-
-
-extern "C" DLLEXPORT float __declspec(dllexport) GetPluginVersion()
-{
-	return Version::VERSION;
 }

@@ -18,11 +18,11 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "FileDescription", "Mathf"
+            VALUE "FileDescription", PROJECT_NAME
 			VALUE "FileVersion", MATH_VERSION_VERSTRING
-            VALUE "InternalName", "Mathf"
+            VALUE "InternalName", PROJECT_NAME
             VALUE "LegalCopyright", "MIT License"
-            VALUE "ProductName", "Mathf"
+            VALUE "ProductName", PROJECT_NAME
 			VALUE "ProductVersion", MATH_VERSION_VERSTRING
         END
     END

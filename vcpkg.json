@@ -1,0 +1,13 @@
+{
+  "name": "libmathf",
+  "version-string": "1.0.0",
+  "description": "Papyrus extensions for LibMathf",
+  "homepage": "https://github.com/fireundubh/LibMathf",
+  "license": "MIT",
+  "dependencies": [
+    "boost-atomic",
+    "boost-stl-interfaces",
+    "span-lite",
+    "spdlog"
+  ]
+}

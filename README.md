@@ -1,4 +1,4 @@
-# Mathf (CommonLibSSE Plugin)
+# LibMathf (CommonLibSSE Plugin)
 
 ```
 ; Returns the absolute value of f
