@@ -113,7 +113,7 @@ if (MSVC)
 endif()
 
 if(NOT TARGET CommonLibSSE)
-    add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/../CommonLibSSE" CommonLibSSE)
+    add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/../CommonLibSSE-po3" CommonLibSSE)
 endif()
 
 find_package(spdlog REQUIRED)
