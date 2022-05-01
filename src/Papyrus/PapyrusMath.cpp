@@ -307,56 +307,56 @@ namespace PapyrusMath
 	{
 		if (!a_vm)
 		{
-			logger::info("PapyrusMath - couldn't get VMState");
+			logger::info("PapyrusMath - couldn't get VMState"sv);
 			return false;
 		}
 
-		a_vm->RegisterFunction("Abs", PROJECT_NAME, Abs);
-		a_vm->RegisterFunction("Acos", PROJECT_NAME, Acos);
-		a_vm->RegisterFunction("Approximately", PROJECT_NAME, Approximately);
-		a_vm->RegisterFunction("Asin", PROJECT_NAME, Asin);
-		a_vm->RegisterFunction("Atan", PROJECT_NAME, Atan);
-		a_vm->RegisterFunction("Atan2", PROJECT_NAME, Atan2);
-		a_vm->RegisterFunction("Ceil", PROJECT_NAME, Ceil);
-		a_vm->RegisterFunction("CeilToInt", PROJECT_NAME, CeilToInt);
-		a_vm->RegisterFunction("Clamp", PROJECT_NAME, Clamp);
-		a_vm->RegisterFunction("Clamp01", PROJECT_NAME, Clamp01);
-		a_vm->RegisterFunction("ClosestPowerOfTwo", PROJECT_NAME, ClosestPowerOfTwo);
+		a_vm->RegisterFunction("Abs"sv, PROJECT_NAME, Abs);
+		a_vm->RegisterFunction("Acos"sv, PROJECT_NAME, Acos);
+		a_vm->RegisterFunction("Approximately"sv, PROJECT_NAME, Approximately);
+		a_vm->RegisterFunction("Asin"sv, PROJECT_NAME, Asin);
+		a_vm->RegisterFunction("Atan"sv, PROJECT_NAME, Atan);
+		a_vm->RegisterFunction("Atan2"sv, PROJECT_NAME, Atan2);
+		a_vm->RegisterFunction("Ceil"sv, PROJECT_NAME, Ceil);
+		a_vm->RegisterFunction("CeilToInt"sv, PROJECT_NAME, CeilToInt);
+		a_vm->RegisterFunction("Clamp"sv, PROJECT_NAME, Clamp);
+		a_vm->RegisterFunction("Clamp01"sv, PROJECT_NAME, Clamp01);
+		a_vm->RegisterFunction("ClosestPowerOfTwo"sv, PROJECT_NAME, ClosestPowerOfTwo);
 		// CorrelatedColorTemperatureToRGB not implemented
-		a_vm->RegisterFunction("Cos", PROJECT_NAME, Cos);
-		a_vm->RegisterFunction("DeltaAngle", PROJECT_NAME, DeltaAngle);
-		a_vm->RegisterFunction("Exp", PROJECT_NAME, Exp);
-		a_vm->RegisterFunction("Floor", PROJECT_NAME, Floor);
-		a_vm->RegisterFunction("FloorToInt", PROJECT_NAME, FloorToInt);
-		a_vm->RegisterFunction("IfThen", PROJECT_NAME, IfThen);
-		a_vm->RegisterFunction("InRange", PROJECT_NAME, InRange);
+		a_vm->RegisterFunction("Cos"sv, PROJECT_NAME, Cos);
+		a_vm->RegisterFunction("DeltaAngle"sv, PROJECT_NAME, DeltaAngle);
+		a_vm->RegisterFunction("Exp"sv, PROJECT_NAME, Exp);
+		a_vm->RegisterFunction("Floor"sv, PROJECT_NAME, Floor);
+		a_vm->RegisterFunction("FloorToInt"sv, PROJECT_NAME, FloorToInt);
+		a_vm->RegisterFunction("IfThen"sv, PROJECT_NAME, IfThen);
+		a_vm->RegisterFunction("InRange"sv, PROJECT_NAME, InRange);
 		// GammaToLinearSpace not implemented
-		a_vm->RegisterFunction("InverseLerp", PROJECT_NAME, InverseLerp);
-		a_vm->RegisterFunction("IsPowerOfTwo", PROJECT_NAME, IsPowerOfTwo);
-		a_vm->RegisterFunction("Lerp", PROJECT_NAME, Lerp);
-		a_vm->RegisterFunction("LerpAngle", PROJECT_NAME, LerpAngle);
-		a_vm->RegisterFunction("LerpUnclamped", PROJECT_NAME, LerpUnclamped);
+		a_vm->RegisterFunction("InverseLerp"sv, PROJECT_NAME, InverseLerp);
+		a_vm->RegisterFunction("IsPowerOfTwo"sv, PROJECT_NAME, IsPowerOfTwo);
+		a_vm->RegisterFunction("Lerp"sv, PROJECT_NAME, Lerp);
+		a_vm->RegisterFunction("LerpAngle"sv, PROJECT_NAME, LerpAngle);
+		a_vm->RegisterFunction("LerpUnclamped"sv, PROJECT_NAME, LerpUnclamped);
 		// LinearToGammaSpace not implemented
-		a_vm->RegisterFunction("Log", PROJECT_NAME, Log);
-		a_vm->RegisterFunction("Log10", PROJECT_NAME, Log10);
-		a_vm->RegisterFunction("Max", PROJECT_NAME, Max);
-		a_vm->RegisterFunction("Min", PROJECT_NAME, Min);
-		a_vm->RegisterFunction("MoveTowards", PROJECT_NAME, MoveTowards);
-		a_vm->RegisterFunction("MoveTowardsAngle", PROJECT_NAME, MoveTowardsAngle);
-		a_vm->RegisterFunction("NextPowerOfTwo", PROJECT_NAME, NextPowerOfTwo);
+		a_vm->RegisterFunction("Log"sv, PROJECT_NAME, Log);
+		a_vm->RegisterFunction("Log10"sv, PROJECT_NAME, Log10);
+		a_vm->RegisterFunction("Max"sv, PROJECT_NAME, Max);
+		a_vm->RegisterFunction("Min"sv, PROJECT_NAME, Min);
+		a_vm->RegisterFunction("MoveTowards"sv, PROJECT_NAME, MoveTowards);
+		a_vm->RegisterFunction("MoveTowardsAngle"sv, PROJECT_NAME, MoveTowardsAngle);
+		a_vm->RegisterFunction("NextPowerOfTwo"sv, PROJECT_NAME, NextPowerOfTwo);
 		// PerlinNoise not implemented
-		a_vm->RegisterFunction("PingPong", PROJECT_NAME, PingPong);
-		a_vm->RegisterFunction("Pow", PROJECT_NAME, Pow);
-		a_vm->RegisterFunction("Repeat", PROJECT_NAME, Repeat);
-		a_vm->RegisterFunction("Round", PROJECT_NAME, Round);
-		a_vm->RegisterFunction("RoundToInt", PROJECT_NAME, RoundToInt);
-		a_vm->RegisterFunction("Sign", PROJECT_NAME, Sign);
-		a_vm->RegisterFunction("Sin", PROJECT_NAME, Sin);
+		a_vm->RegisterFunction("PingPong"sv, PROJECT_NAME, PingPong);
+		a_vm->RegisterFunction("Pow"sv, PROJECT_NAME, Pow);
+		a_vm->RegisterFunction("Repeat"sv, PROJECT_NAME, Repeat);
+		a_vm->RegisterFunction("Round"sv, PROJECT_NAME, Round);
+		a_vm->RegisterFunction("RoundToInt"sv, PROJECT_NAME, RoundToInt);
+		a_vm->RegisterFunction("Sign"sv, PROJECT_NAME, Sign);
+		a_vm->RegisterFunction("Sin"sv, PROJECT_NAME, Sin);
 		// SmoothDamp not implemented
 		// SmoothDampAngle not implemented
-		a_vm->RegisterFunction("SmoothStep", PROJECT_NAME, SmoothStep);
-		a_vm->RegisterFunction("Sqrt", PROJECT_NAME, Sqrt);
-		a_vm->RegisterFunction("Tan", PROJECT_NAME, Tan);
+		a_vm->RegisterFunction("SmoothStep"sv, PROJECT_NAME, SmoothStep);
+		a_vm->RegisterFunction("Sqrt"sv, PROJECT_NAME, Sqrt);
+		a_vm->RegisterFunction("Tan"sv, PROJECT_NAME, Tan);
 
 		return true;
 	}

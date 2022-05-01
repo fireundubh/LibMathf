@@ -164,6 +164,6 @@ target_precompile_headers(
 add_custom_command(
     TARGET ${PROJECT_NAME}
     POST_BUILD
-    COMMAND "${CMAKE_COMMAND}" -E copy_if_different "$<TARGET_FILE:${PROJECT_NAME}>" "F:/ModOrganizer/Games/SkyrimSE/mods/LibMathf/SKSE/Plugins/"
-    COMMAND "${CMAKE_COMMAND}" -E copy_if_different "${CMAKE_SOURCE_DIR}/Scripts/Source/LibMathf.psc" "F:/ModOrganizer/Games/SkyrimSE/mods/LibMathf/Scripts/Source/LibMathf.psc"
+    COMMAND "${CMAKE_COMMAND}" -E copy_if_different "$<TARGET_FILE:${PROJECT_NAME}>" "G:/ModOrganizer/Games/SkyrimSE/mods/LibMathf/SKSE/Plugins/"
+    COMMAND "${CMAKE_COMMAND}" -E copy_if_different "${CMAKE_SOURCE_DIR}/Scripts/Source/LibMathf.psc" "G:/ModOrganizer/Games/SkyrimSE/mods/LibMathf/Scripts/Source/LibMathf.psc"
 )
