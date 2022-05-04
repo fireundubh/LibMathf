@@ -47,6 +47,7 @@ include(GoogleTest)
 # ---- Dependencies ----
 
 find_package(CommonLibSSE REQUIRED)
+find_package(binary_io REQUIRED)
 find_package(spdlog REQUIRED)
 find_package(fmt REQUIRED)
 
