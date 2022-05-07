@@ -5,12 +5,13 @@
   "homepage": "https://github.com/fireundubh/LibMathf",
   "license": "MIT",
   "dependencies": [
+    "boost-atomic",
     "boost-stl-interfaces",
     "rsm-binary-io",
     "spdlog",
     "commonlibsse-ng-prebuilt"
   ],
-  "builtin-baseline": "b98afc9f1192becb2f447cee485ce36ba111f9f6",
+  "builtin-baseline": "a5d6d145164e82e67fbf91a4a30f98699d30de63",
   "overrides": [
     {
       "name": "fmt",
