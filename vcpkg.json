@@ -9,9 +9,9 @@
     "boost-stl-interfaces",
     "rsm-binary-io",
     "spdlog",
-    "commonlibsse-ng-prebuilt"
+    "commonlibsse-ng"
   ],
-  "builtin-baseline": "a5d6d145164e82e67fbf91a4a30f98699d30de63",
+  "builtin-baseline": "314018fef43c7e3a52a3e46599313b70ace3977a",
   "overrides": [
     {
       "name": "fmt",
