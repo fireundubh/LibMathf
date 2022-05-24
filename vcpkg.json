@@ -11,7 +11,7 @@
     "spdlog",
     "commonlibsse-ng"
   ],
-  "builtin-baseline": "314018fef43c7e3a52a3e46599313b70ace3977a",
+  "builtin-baseline": "19379755554de68df13c2109606d7c995bae6cd4",
   "overrides": [
     {
       "name": "fmt",
