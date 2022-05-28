@@ -4,7 +4,8 @@ cmake_minimum_required(VERSION 3.21)
 
 project(
     LibMathf
-    VERSION 1.0.0
+    VERSION 1.0.1.1
+    HOMEPAGE_URL https://github.com/fireundubh/LibMathf
     LANGUAGES CXX
 )
 set(CMAKE_CXX_STANDARD 23)
@@ -18,7 +19,6 @@ configure_file(
 
 set(headers
     src/PCH.h
-    src/Constants.h
     src/Papyrus/Registration.h
     src/Papyrus/PapyrusMath.h
 )
@@ -46,7 +46,7 @@ include(GoogleTest)
 
 # ---- Dependencies ----
 
-find_package(CommonLibSSE REQUIRED)
+find_package(CommonLibSSE CONFIG REQUIRED)
 find_package(binary_io REQUIRED)
 find_package(spdlog REQUIRED)
 find_package(fmt REQUIRED)
@@ -112,13 +112,15 @@ endif()
 
 # ---- Configure target DLL ----
 
-add_library(
+add_commonlibsse_plugin(
     ${PROJECT_NAME}
-    SHARED
-    ${headers}
-    ${sources}
-    ${CMAKE_CURRENT_BINARY_DIR}/version.rc
-    .clang-format
+    AUTHOR
+        fireundubh
+    SOURCES
+        ${headers}
+        ${sources}
+        ${CMAKE_CURRENT_BINARY_DIR}/version.rc
+        .clang-format
 )
 
 target_compile_features(
@@ -148,7 +150,6 @@ target_include_directories(
 target_link_libraries(
     ${PROJECT_NAME}
     PUBLIC
-        CommonLibSSE::CommonLibSSE
         spdlog::spdlog
         fmt::fmt
 )
