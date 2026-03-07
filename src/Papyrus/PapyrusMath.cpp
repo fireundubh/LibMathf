@@ -258,7 +258,7 @@ namespace PapyrusMath
 	{
 		const auto dAngle = deltaAngle(current, target);
 		if (-maxDelta < dAngle && dAngle < maxDelta) {
-			return target;
+			return current + dAngle;
 		}
 		target = current + dAngle;
 		return moveTowards(current, target, maxDelta);

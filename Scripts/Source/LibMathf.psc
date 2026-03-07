@@ -70,7 +70,7 @@ Float Function Max(Float x, Float y) Global Native
 ; Returns the smallest of two numbers
 Float Function Min(Float x, Float y) Global Native
 
-; Moves current value towards target
+; Moves current value towards target. Negative maxDelta pushes away from target.
 Float Function MoveTowards(Float current, Float target, Float maxDelta) Global Native
 
 ; Same as MoveTowards but makes sure the values interpolate correctly when they wrap around 360 degrees
