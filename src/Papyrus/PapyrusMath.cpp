@@ -138,12 +138,6 @@ namespace PapyrusMath
 		return static_cast<std::int32_t>(result);
 	}
 
-	auto IsPowerOfTwo(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const std::int32_t n) -> bool
-	{
-		const auto u = static_cast<uint32_t>(n);
-		return ((u | 0x80000000u) & (u - 1u)) == 0u;
-	}
-
 	auto Max(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float x, const float y) -> float
 	{
 		return std::fmax(x, y);
@@ -213,23 +207,6 @@ namespace PapyrusMath
 		return clamp01(value);
 	}
 
-	auto ClosestPowerOfTwo(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const std::int32_t value) -> std::int32_t
-	{
-		auto v = value;
-
-		v--;
-		v |= v >> 1;
-		v |= v >> 2;
-		v |= v >> 4;
-		v |= v >> 8;
-		v |= v >> 16;
-		v++;
-
-		auto x = v >> 1;
-
-		return v - value > value - x ? x : v;
-	}
-
 	auto DeltaAngle(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float current, const float target) -> float
 	{
 		return deltaAngle(current, target);
@@ -287,20 +264,6 @@ namespace PapyrusMath
 		return moveTowards(current, target, maxDelta);
 	}
 
-	auto NextPowerOfTwo(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const std::int32_t n) -> std::int32_t
-	{
-		if (n <= 0) {
-			return 0;
-		}
-		auto v = static_cast<uint32_t>(n - 1);
-		v |= v >> 1;
-		v |= v >> 2;
-		v |= v >> 4;
-		v |= v >> 8;
-		v |= v >> 16;
-		return static_cast<std::int32_t>(v + 1);
-	}
-
 	auto PingPong(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float t, const float length) -> float
 	{
 		const auto _t = repeat(t, length * 2.f);
@@ -345,8 +308,6 @@ namespace PapyrusMath
 		a_vm->RegisterFunction("CeilToInt"sv, project_name, CeilToInt);
 		a_vm->RegisterFunction("Clamp"sv, project_name, Clamp);
 		a_vm->RegisterFunction("Clamp01"sv, project_name, Clamp01);
-		a_vm->RegisterFunction("ClosestPowerOfTwo"sv, project_name, ClosestPowerOfTwo);
-		// CorrelatedColorTemperatureToRGB not implemented
 		a_vm->RegisterFunction("Cos"sv, project_name, Cos);
 		a_vm->RegisterFunction("DeltaAngle"sv, project_name, DeltaAngle);
 		a_vm->RegisterFunction("Exp"sv, project_name, Exp);
@@ -354,21 +315,16 @@ namespace PapyrusMath
 		a_vm->RegisterFunction("FloorToInt"sv, project_name, FloorToInt);
 		a_vm->RegisterFunction("IfThen"sv, project_name, IfThen);
 		a_vm->RegisterFunction("InRange"sv, project_name, InRange);
-		// GammaToLinearSpace not implemented
 		a_vm->RegisterFunction("InverseLerp"sv, project_name, InverseLerp);
-		a_vm->RegisterFunction("IsPowerOfTwo"sv, project_name, IsPowerOfTwo);
 		a_vm->RegisterFunction("Lerp"sv, project_name, Lerp);
 		a_vm->RegisterFunction("LerpAngle"sv, project_name, LerpAngle);
 		a_vm->RegisterFunction("LerpUnclamped"sv, project_name, LerpUnclamped);
-		// LinearToGammaSpace not implemented
 		a_vm->RegisterFunction("Log"sv, project_name, Log);
 		a_vm->RegisterFunction("Log10"sv, project_name, Log10);
 		a_vm->RegisterFunction("Max"sv, project_name, Max);
 		a_vm->RegisterFunction("Min"sv, project_name, Min);
 		a_vm->RegisterFunction("MoveTowards"sv, project_name, MoveTowards);
 		a_vm->RegisterFunction("MoveTowardsAngle"sv, project_name, MoveTowardsAngle);
-		a_vm->RegisterFunction("NextPowerOfTwo"sv, project_name, NextPowerOfTwo);
-		// PerlinNoise not implemented
 		a_vm->RegisterFunction("PingPong"sv, project_name, PingPong);
 		a_vm->RegisterFunction("Pow"sv, project_name, Pow);
 		a_vm->RegisterFunction("Repeat"sv, project_name, Repeat);
@@ -376,8 +332,6 @@ namespace PapyrusMath
 		a_vm->RegisterFunction("RoundToInt"sv, project_name, RoundToInt);
 		a_vm->RegisterFunction("Sign"sv, project_name, Sign);
 		a_vm->RegisterFunction("Sin"sv, project_name, Sin);
-		// SmoothDamp not implemented
-		// SmoothDampAngle not implemented
 		a_vm->RegisterFunction("SmoothStep"sv, project_name, SmoothStep);
 		a_vm->RegisterFunction("Sqrt"sv, project_name, Sqrt);
 		a_vm->RegisterFunction("Tan"sv, project_name, Tan);

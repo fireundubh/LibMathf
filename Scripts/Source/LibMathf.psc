@@ -31,9 +31,6 @@ Float Function Clamp(Float value, Float min, Float max) Global Native
 ; Returns value clamped between 0 and 1
 Float Function Clamp01(Float value) Global Native
 
-; Returns the closest power of two number
-Int Function ClosestPowerOfTwo(Int value) Global Native
-
 ; Returns the cosine of angle f
 Float Function Cos(Float f) Global Native
 
@@ -58,9 +55,6 @@ Bool Function InRange(Float value, Float min, Float max) Global Native
 ; Calculates the linear parameter t that produces the interpolant value within the range [a, b]
 Float Function InverseLerp(Float a, Float b, Float value) Global Native
 
-; Returns true if the number is power of two
-Bool Function IsPowerOfTwo(Int n) Global Native
-
 ; Linearly interpolates between a and b by t
 Float Function Lerp(Float a, Float b, Float t) Global Native
 
@@ -81,9 +75,6 @@ Float Function MoveTowards(Float current, Float target, Float maxDelta) Global N
 
 ; Same as MoveTowards but makes sure the values interpolate correctly when they wrap around 360 degrees
 Float Function MoveTowardsAngle(Float current, Float target, Float maxDelta) Global Native
-
-; Returns the next power of two greater than or equal to n
-Int Function NextPowerOfTwo(Int n) Global Native
 
 ; Returns number that will increment and decrement between 0 and length
 Float Function PingPong(Float t, Float len) Global Native

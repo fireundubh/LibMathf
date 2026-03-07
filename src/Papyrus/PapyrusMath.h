@@ -19,7 +19,6 @@ namespace PapyrusMath
 	auto CeilToInt(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float f) -> std::int32_t;
 	auto Clamp(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float value, const float min, const float max) -> float;
 	auto Clamp01(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float value) -> float;
-	auto ClosestPowerOfTwo(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const std::int32_t value) -> std::int32_t;
 	auto Cos(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float f) -> float;
 	auto DeltaAngle(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float current, const float target) -> float;
 	auto Exp(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float p) -> float;
@@ -28,7 +27,6 @@ namespace PapyrusMath
 	auto IfThen(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const bool value, const float t, const float f) -> float;
 	auto InRange(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float value, const float min, const float max) -> bool;
 	auto InverseLerp(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float a, const float b, const float value) -> float;
-	auto IsPowerOfTwo(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const std::int32_t n) -> bool;
 	auto Lerp(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float a, const float b, const float t) -> float;
 	auto LerpAngle(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float a, const float b, const float t) -> float;
 	auto LerpUnclamped(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float a, const float b, const float t) -> float;
@@ -38,7 +36,6 @@ namespace PapyrusMath
 	auto Min(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float x, const float y) -> float;
 	auto MoveTowards(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float current, const float target, const float maxDelta) -> float;
 	auto MoveTowardsAngle(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float current, const float target, const float maxDelta) -> float;
-	auto NextPowerOfTwo(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const std::int32_t n) -> std::int32_t;
 	auto PingPong(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float t, const float length) -> float;
 	auto Pow(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float f, const float p) -> float;
 	auto Repeat(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float t, const float length) -> float;
