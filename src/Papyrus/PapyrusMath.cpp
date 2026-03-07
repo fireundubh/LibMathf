@@ -38,6 +38,9 @@ static auto clamp01(const float value) -> float
 
 static auto repeat(const float t, const float length) -> float
 {
+	if (length == 0.f) {
+		return 0.f;
+	}
 	return clamp(t - std::floor(t / length) * length, 0.0f, length);
 }
 
@@ -103,7 +106,11 @@ namespace PapyrusMath
 
 	auto CeilToInt(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float f) -> std::int32_t
 	{
-		return static_cast<std::int32_t>(std::ceilf(f));
+		const auto result = std::ceilf(f);
+		if (result >= static_cast<float>(INT32_MAX) || result <= static_cast<float>(INT32_MIN)) {
+			return result >= 0.f ? INT32_MAX : INT32_MIN;
+		}
+		return static_cast<std::int32_t>(result);
 	}
 
 	auto Cos(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float f) -> float
@@ -123,13 +130,17 @@ namespace PapyrusMath
 
 	auto FloorToInt(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float a_value) -> std::int32_t
 	{
-		return static_cast<std::int32_t>(std::floorf(a_value));
+		const auto result = std::floorf(a_value);
+		if (result >= static_cast<float>(INT32_MAX) || result <= static_cast<float>(INT32_MIN)) {
+			return result >= 0.f ? INT32_MAX : INT32_MIN;
+		}
+		return static_cast<std::int32_t>(result);
 	}
 
 	auto IsPowerOfTwo(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const std::int32_t n) -> bool
 	{
 		const auto u = static_cast<uint32_t>(n);
-		return ((u | 0x80000000u) & u - 1u) == 0u;
+		return ((u | 0x80000000u) & (u - 1u)) == 0u;
 	}
 
 	auto Max(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float x, const float y) -> float
@@ -164,7 +175,11 @@ namespace PapyrusMath
 
 	auto RoundToInt(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float f) -> std::int32_t
 	{
-		return static_cast<std::int32_t>(std::roundf(f));
+		const auto result = std::roundf(f);
+		if (result >= static_cast<float>(INT32_MAX) || result <= static_cast<float>(INT32_MIN)) {
+			return result >= 0.f ? INT32_MAX : INT32_MIN;
+		}
+		return static_cast<std::int32_t>(result);
 	}
 
 	auto Sin(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float f) -> float
@@ -181,10 +196,6 @@ namespace PapyrusMath
 	{
 		return std::tanf(f);
 	}
-
-	# pragma endregion
-
-	# pragma region unity mathf functions exposed to papyrus
 
 	auto Approximately(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float a, const float b) -> bool
 	{
@@ -277,7 +288,16 @@ namespace PapyrusMath
 
 	auto NextPowerOfTwo(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const std::int32_t n) -> std::int32_t
 	{
-		return static_cast<std::int32_t>(std::pow(2, std::ceil(std::log2(n))));
+		if (n <= 0) {
+			return 0;
+		}
+		auto v = static_cast<uint32_t>(n - 1);
+		v |= v >> 1;
+		v |= v >> 2;
+		v |= v >> 4;
+		v |= v >> 8;
+		v |= v >> 16;
+		return static_cast<std::int32_t>(v + 1);
 	}
 
 	auto PingPong(VM* a_vm, StackID a_stackID, RE::StaticFunctionTag*, const float t, const float length) -> float
