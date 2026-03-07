@@ -42,7 +42,6 @@ source_group(
 
 include(CheckIPOSupported)
 include(GNUInstallDirs)
-include(GoogleTest)
 
 # ---- Dependencies ----
 

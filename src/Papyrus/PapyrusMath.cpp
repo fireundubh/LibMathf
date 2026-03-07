@@ -3,6 +3,7 @@
 #include "PapyrusMath.h"
 
 
+// volatile prevents compile-time constant folding so we can detect flush-to-zero at runtime
 static volatile float FloatMinNormal = 1.175494E-38f;
 static volatile float FloatMinDenormal = 1.401298E-45f;
 static bool IsFlushToZeroEnabled = static_cast<double>(FloatMinDenormal) == 0.0;
